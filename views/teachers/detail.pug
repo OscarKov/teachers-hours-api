@@ -1,0 +1,12 @@
+extend ../layout.pug
+
+block content
+  h2= teacher.name
+  h3= materias
+  ul
+    each subject in teacher.subjects
+      li= subject.name
+      each group in subject.groups
+        ul
+        each subCourse in group.sub
+          li= group.course + '-' + subCourse

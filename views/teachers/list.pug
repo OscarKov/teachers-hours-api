@@ -1,0 +1,7 @@
+extend ../layout.pug
+
+block content
+  ul.teachers-list
+    each teacher in teachers
+      li
+        a(href=teacher.id)= teacher.name

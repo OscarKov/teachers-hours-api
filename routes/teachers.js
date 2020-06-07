@@ -15,8 +15,13 @@ db.once('open', function() {
 // Lista los profesores.
 router.get('/', function(req, res, next) {
     Teacher.find({}, function(err, teachers) {
-        res.send(teachers)
+        res.render('teachers/list', { teachers: teachers });
     });
+});
+
+// formulario nuevo profesor
+router.get('/new', function(req, res, next) {
+    res.render('teachers/new');
 });
 
 // Obtiene un profesor por ID.
@@ -24,7 +29,7 @@ router.get('/:id', function(req, res, next) {
     const id = req.params.id;
     if (id == '') res.send('No se encontro el profesor');
     Teacher.findById(id, function(err, teacher) {
-        res.send(teacher);
+        res.render('teachers/detail', { teacher: teacher })
     });
 });
 
