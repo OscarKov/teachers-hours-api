@@ -1,5 +1,9 @@
 {
   "name": "teacher-hours-api",
+  "author": {
+    "email": "oscarvmw@gmail.com",
+    "name": "Oscar Jurado"
+  },
   "version": "1.0.0",
   "private": true,
   "scripts": {
